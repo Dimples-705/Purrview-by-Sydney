@@ -5,10 +5,14 @@ An ai and Javascipt powered Chrome and Firefox Extention that summarizes webpage
 
 Developed by Project Research Specialist D.R.
 
-<img src="images/Dimples_Research_1.png" alt="Logo" width="200"/>
+<img src="images/Dimples_Research_1.PNG" alt="Logo" width="200"/>
 
 <img src="images/PR_Logo1.JPG" alt="Logo" width="200"/>
 
-<img src="images/PR_Logo_Animation1.mov" alt="Logo" width="200"/>
+<video width="200" autoplay loop muted playsinline>
+  <source src="images/PR_Logo_Animation1.mov" type="video/quicktime">
+  Your browser does not support the video tag.
+</video>
+
 
 
