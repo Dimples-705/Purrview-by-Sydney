@@ -1,0 +1,59 @@
+## popup/popup.html
+```html
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Summarizer</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>AI Summarizer</h1>
+      <small>Free • Local • Private</small>
+    </header>
+
+    <section class="controls">
+      <label>
+        Mode
+        <select id="mode">
+          <option value="extractive" selected>Extractive (fast, offline)</option>
+          <option value="abstractive">Abstractive (Transformers.js)</option>
+        </select>
+      </label>
+
+      <label>
+        Length
+        <select id="length">
+          <option value="short">Short</option>
+          <option value="medium" selected>Medium</option>
+          <option value="long">Long</option>
+        </select>
+      </label>
+
+      <button id="summarize">Summarize current page</button>
+    </section>
+
+    <section id="meta"></section>
+    <section>
+      <textarea id="output" placeholder="Your summary will appear here..." rows="12"></textarea>
+    </section>
+
+    <footer>
+      <a id="openOptions" href="#">Options</a>
+    </footer>
+  </div>
+
+  <!-- Optional: Transformers.js for in-browser abstractive mode (save locally at vendor/transformers.min.js) -->
+  <script src="../vendor/transformers.min.js" onerror="console.debug('Transformers not bundled; abstractive mode will be unavailable.')"></script>
+  <script type="module" src="../summarizers/extractive.js"></script>
+  <script type="module" src="../summarizers/abstractive.js"></script>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
+```
+
+---
+

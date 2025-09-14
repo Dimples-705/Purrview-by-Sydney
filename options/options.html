@@ -1,0 +1,56 @@
+## options/options.html
+```html
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>AI Summarizer – Options</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto; padding: 20px; max-width: 800px; }
+    label { display: block; margin: 10px 0 4px; }
+    input[type=text], input[type=password] { width: 100%; padding: 8px; }
+    .hint { font-size: 12px; opacity: 0.8; }
+    .row { display: grid; grid-template-columns: 220px 1fr; gap: 12px; align-items: center; }
+  </style>
+</head>
+<body>
+  <h1>Options</h1>
+  <p>By default the extension uses the <strong>free, offline extractive summarizer</strong>. To enable <strong>abstractive</strong> mode fully offline, bundle Transformers.js (see instructions below).</p>
+
+  <h2>Enable Abstractive (Transformers.js)</h2>
+  <ol>
+    <li>Download <code>transformers.min.js</code> from the official Transformers.js releases (Xenova) and place it at <code>vendor/transformers.min.js</code> in this extension directory.</li>
+    <li>No API keys required. Models are downloaded on first use and cached by your browser.</li>
+  </ol>
+
+  <h2>Optional: Remote LLM (if you have an API key)</h2>
+  <p class="hint">This extension is fully usable without any API, but if you prefer a hosted provider, you can add your key below and future versions could call it instead.</p>
+
+  <div class="row">
+    <label for="provider">Provider</label>
+    <select id="provider">
+      <option value="none">None (offline only)</option>
+      <option value="openai">OpenAI (requires key)</option>
+      <option value="mistral">Mistral (requires key)</option>
+      <option value="anthropic">Anthropic (requires key)</option>
+    </select>
+  </div>
+
+  <div class="row">
+    <label for="apikey">API Key</label>
+    <input type="password" id="apikey" placeholder="sk-... (optional)" />
+  </div>
+
+  <button id="save">Save</button>
+  <span id="status" class="hint"></span>
+
+  <h2>Privacy</h2>
+  <p>Offline modes do not send page content anywhere. If you later enable a remote LLM, content will be sent to that provider per their terms.</p>
+
+  <script src="options.js"></script>
+</body>
+</html>
+```
+
+---
+
