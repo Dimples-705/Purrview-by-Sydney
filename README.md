@@ -3,5 +3,5 @@ An ai and Javascipt powered Chrome and Firefox Extention that summarizes webpage
 
 Developed by Project Research Specialist D.R.
 
+<img src="images/logo2.png" alt="Logo" width="200"/>
 
-![Logo](images/logo1.png)
